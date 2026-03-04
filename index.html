@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,189 +8,20 @@
 
 <title>Mohamed Aslam | Java Full Stack Developer</title>
 
+<link rel="stylesheet" href="style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
-}
-
-body{
-background:#0f172a;
-color:white;
-overflow-x:hidden;
-}
-
-/* NAV */
-
-nav{
-display:flex;
-justify-content:space-between;
-padding:20px 8%;
-position:fixed;
-width:100%;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-nav h2{
-color:#38bdf8;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:500;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#020617,#0f172a);
-}
-
-.hero img{
-width:170px;
-border-radius:50%;
-margin-bottom:20px;
-border:4px solid #38bdf8;
-}
-
-.hero h1{
-font-size:48px;
-}
-
-.hero h3{
-color:#38bdf8;
-margin:10px 0;
-}
-
-.typing{
-font-size:20px;
-height:30px;
-margin-bottom:20px;
-}
-
-.btn{
-background:#38bdf8;
-padding:12px 25px;
-color:black;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-}
-
-/* SECTION */
-
-section{
-padding:100px 10%;
-}
-
-/* ABOUT */
-
-.about p{
-max-width:800px;
-line-height:1.8;
-color:#cbd5f5;
-}
-
-/* SKILLS */
-
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.skill{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-text-align:center;
-}
-
-/* EXPERIENCE */
-
-.timeline{
-border-left:3px solid #38bdf8;
-padding-left:20px;
-margin-top:40px;
-}
-
-.timeline-item{
-margin-bottom:30px;
-}
-
-/* PROJECTS */
-
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.project{
-background:#1e293b;
-padding:25px;
-border-radius:12px;
-transition:0.3s;
-}
-
-.project:hover{
-transform:translateY(-8px);
-background:#334155;
-}
-
-/* CONTACT */
-
-.contact{
-text-align:center;
-}
-
-.contact a{
-display:block;
-margin:10px;
-color:#38bdf8;
-text-decoration:none;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:30px;
-background:#020617;
-margin-top:60px;
-}
-
-</style>
 </head>
 
 <body>
 
 <nav>
+
 <h2>Aslam</h2>
+
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
@@ -197,11 +29,12 @@ margin-top:60px;
 <li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </nav>
 
 <section class="hero">
 
-<img src="profile.png">
+<img src="profile.png" class="profile">
 
 <h1>Mohamed Aslam</h1>
 
@@ -215,20 +48,15 @@ Download Resume
 
 </section>
 
-<section id="about" class="about">
+<section id="about">
 
 <h2>About</h2>
 
 <p>
-
-I am a Java Full Stack Developer focused on building scalable backend systems
-using Spring Boot and microservices architecture. My experience includes
-developing enterprise ERP systems, secure authentication platforms,
-and distributed event-driven services.
-
-I enjoy designing clean APIs, optimizing database performance,
-and building production-ready backend platforms.
-
+Java Full Stack Developer specializing in scalable backend
+systems using Spring Boot and microservices architecture.
+Experienced in building enterprise ERP platforms, secure
+authentication systems and high-performance APIs.
 </p>
 
 </section>
@@ -239,7 +67,7 @@ and building production-ready backend platforms.
 
 <div class="skills">
 
-<div class="skill">Java 17</div>
+<div class="skill">Java</div>
 <div class="skill">Spring Boot</div>
 <div class="skill">Microservices</div>
 <div class="skill">Angular</div>
@@ -261,11 +89,11 @@ and building production-ready backend platforms.
 <div class="timeline-item">
 
 <h3>Java Backend Developer</h3>
-<p>Annaa Silicon Technology (2023 – 2025)</p>
+<p>Annaa Silicon Technology</p>
 
 <p>
-Developed REST APIs, ERP modules, microservices architecture,
-and optimized MySQL queries improving system performance.
+Developed REST APIs, ERP modules and microservices
+architecture for enterprise applications.
 </p>
 
 </div>
@@ -285,8 +113,8 @@ and optimized MySQL queries improving system performance.
 <h3>Retail ERP System</h3>
 
 <p>
-Enterprise retail ERP including POS, billing,
-inventory, accounting and financial reporting.
+ERP system including POS billing, inventory
+management and accounting modules.
 </p>
 
 </div>
@@ -296,8 +124,8 @@ inventory, accounting and financial reporting.
 <h3>E-Commerce Platform</h3>
 
 <p>
-Secure authentication, product management,
-order APIs and PluralPay payment integration.
+Secure authentication system with product
+catalog and PluralPay payment gateway integration.
 </p>
 
 </div>
@@ -307,15 +135,15 @@ order APIs and PluralPay payment integration.
 <h3>Biometric Room Booking</h3>
 
 <p>
-Microservices based booking system integrated
-with Secugen Hamster Pro fingerprint device.
+Microservices based system integrated with
+Secugen Hamster Pro fingerprint device.
 </p>
 
 </div>
 
 <div class="project">
 
-<h3>Management Systems</h3>
+<h3>Management Platforms</h3>
 
 <p>
 Jewellery, Chit Fund, School and Hospital
@@ -328,17 +156,21 @@ management systems built using Java stack.
 
 </section>
 
-<section id="contact" class="contact">
+<section id="contact">
 
 <h2>Contact</h2>
 
+<p>
 <a href="mailto:mohamedaslam212001@gmail.com">
 mohamedaslam212001@gmail.com
 </a>
+</p>
 
+<p>
 <a href="https://linkedin.com/in/aslam-it">
-linkedin.com/in/aslam-it
+LinkedIn Profile
 </a>
+</p>
 
 </section>
 
@@ -348,24 +180,7 @@ linkedin.com/in/aslam-it
 
 </footer>
 
-<script>
-
-var typed = new Typed(".typing", {
-
-strings:[
-"Building scalable backend systems",
-"Spring Boot Microservices Engineer",
-"Distributed Systems Developer",
-"Backend Performance Optimizer"
-],
-
-typeSpeed:60,
-backSpeed:40,
-loop:true
-
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
