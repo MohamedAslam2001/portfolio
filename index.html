@@ -79,6 +79,7 @@
       box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4);
       border: 2px solid white;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .theme-toggle:hover {
@@ -86,10 +87,15 @@
       box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
     }
 
+    .theme-toggle:active {
+      transform: scale(0.95);
+    }
+
     .theme-toggle i {
       color: white;
       font-size: 1.5rem;
       transition: transform 0.3s ease;
+      pointer-events: none;
     }
 
     .theme-toggle:hover i {
@@ -1315,23 +1321,34 @@
         loop: true
       });
 
-      // Theme Toggle
+      // Theme Toggle - FIXED for mobile
       const themeToggle = document.getElementById('theme-toggle');
       const themeIcon = document.getElementById('theme-icon');
       const body = document.body;
 
-      // Check for saved theme preference
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      body.setAttribute('data-theme', savedTheme);
-      themeIcon.className = savedTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+      // Function to update theme and icon
+      function setTheme(theme) {
+        body.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        
+        // Update icon - FIX: Direct class assignment
+        if (theme === 'dark') {
+          themeIcon.className = 'fas fa-sun';
+        } else {
+          themeIcon.className = 'fas fa-moon';
+        }
+      }
 
-      themeToggle.addEventListener('click', () => {
+      // Check for saved theme preference
+      const savedTheme =  'light';
+      setTheme(savedTheme);
+
+      // Toggle theme on click - FIX: Ensure event works on mobile
+      themeToggle.addEventListener('click', function(e) {
+        e.preventDefault();
         const currentTheme = body.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        body.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        themeIcon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        setTheme(newTheme);
       });
 
       // Toggle functionality
