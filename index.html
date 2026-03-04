@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohamed Aslam | Java Full Stack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mohamed Aslam · Java Full Stack</title>
   <!-- Google Fonts + Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -29,9 +29,9 @@
       width: 100%; height: 100%;
       z-index: -1;
       background: radial-gradient(circle at 30% 30%, #1a2639, #0b1120);
+      pointer-events: none;
     }
 
-    /* headings */
     h2 {
       font-size: 2.8rem;
       font-weight: 600;
@@ -53,20 +53,21 @@
       border-radius: 4px;
     }
 
-    /* navigation (glass) */
+    /* navigation glass */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 8%;
-      background: rgba(10, 20, 30, 0.6);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      padding: 1rem 8%;
+      background: rgba(10, 20, 30, 0.7);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(56, 189, 248, 0.2);
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 100;
+      flex-wrap: wrap;
     }
 
     nav h2 {
@@ -83,8 +84,9 @@
 
     nav ul {
       display: flex;
-      gap: 2.5rem;
+      gap: 2rem;
       list-style: none;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -95,6 +97,7 @@
       transition: 0.25s;
       position: relative;
       padding-bottom: 5px;
+      white-space: nowrap;
     }
 
     nav a::before {
@@ -109,30 +112,28 @@
     nav a:hover::before { width: 100%; }
     nav a:hover { color: white; }
 
-    /* hero section */
+    /* hero */
     .hero {
-      padding-top: 120px;
+      padding: 140px 5% 60px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      position: relative;
     }
 
     .profile {
-      width: 190px; height: 190px;
+      width: 180px; height: 180px;
       border-radius: 50%;
       object-fit: cover;
       border: 5px solid rgba(56, 189, 248, 0.5);
       box-shadow: 0 20px 35px -8px #0f172a, 0 0 0 3px #38bdf8 inset;
       transition: 0.4s;
       animation: float 6s infinite ease-in-out;
-      margin-top: 20px; margin-bottom: 20px;
+      margin: 10px 0 20px;
+      background: #1e293b;
     }
-
-    .profile:hover { transform: scale(1.02); border-color: #a78bfa; }
 
     @keyframes float {
       0% { transform: translateY(0px); }
@@ -143,7 +144,7 @@
     .hero h1 {
       font-size: 4rem;
       font-weight: 700;
-      margin: 0.8rem 0 0.2rem;
+      margin: 0.5rem 0 0.2rem;
       background: linear-gradient(to right, #f0f9ff, #bae6fd, #7dd3fc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -152,7 +153,7 @@
 
     .typing {
       font-size: 1.9rem;
-      min-height: 4rem;
+      min-height: 5rem;
       color: #b0d4f0;
       font-weight: 300;
       margin-bottom: 2rem;
@@ -185,15 +186,15 @@
 
     /* sections */
     section {
-      padding: 100px 10%;
+      padding: 90px 8%;
       text-align: center;
     }
 
     /* skills grid */
     .skills {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 25px;
       margin-top: 2rem;
     }
 
@@ -214,10 +215,9 @@
     }
 
     .card:hover {
-      transform: translateY(-12px) scale(1.02);
+      transform: translateY(-10px) scale(1.02);
       background: #1e293b;
       border-color: #38bdf8;
-      box-shadow: 0 25px 30px -10px #0f172a;
     }
 
     .card i {
@@ -226,15 +226,12 @@
       transition: 0.2s;
     }
 
-    .card:hover i {
-      color: #a78bfa;
-      transform: scale(1.1);
-    }
+    .card:hover i { color: #a78bfa; transform: scale(1.1); }
 
-    /* project sections */
+    /* project category */
     .project-category-title {
       font-size: 2rem;
-      margin: 2.5rem 0 1.5rem;
+      margin: 2rem 0 1.5rem;
       color: #b0d4f0;
       border-bottom: 2px solid #38bdf8;
       display: inline-block;
@@ -243,7 +240,7 @@
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
       margin-top: 1rem;
     }
@@ -251,7 +248,7 @@
     .project {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(4px);
-      padding: 2.2rem 1.5rem;
+      padding: 2.2rem 1.2rem;
       border-radius: 28px;
       transition: 0.4s;
       border: 1px solid rgba(255,255,255,0.03);
@@ -260,22 +257,21 @@
     }
 
     .project:hover {
-      transform: scale(1.03) translateY(-8px);
+      transform: scale(1.02) translateY(-8px);
       background: #1e293b;
       border-color: #a78bfa;
-      box-shadow: 0 30px 40px -12px #0f172a;
     }
 
-    .project i { font-size: 2.8rem; color: #38bdf8; margin-bottom: 1.2rem; }
-    .project h3 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.8rem; color: #f0f9ff; }
-    .project p { color: #b9c7dd; font-size: 1rem; }
+    .project i { font-size: 2.8rem; color: #38bdf8; margin-bottom: 1rem; }
+    .project h3 { font-size: 1.7rem; font-weight: 600; margin-bottom: 0.8rem; color: #f0f9ff; }
+    .project p { color: #b9c7dd; font-size: 0.98rem; }
 
-    /* contact area */
+    /* contact */
     .contact-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.8rem;
       margin-top: 2.5rem;
     }
 
@@ -284,53 +280,51 @@
       align-items: center;
       gap: 1rem;
       background: rgba(255,255,255,0.03);
-      padding: 1.2rem 2.8rem;
+      padding: 1rem 2.2rem;
       border-radius: 60px;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 500;
       color: #e2e8f0;
       text-decoration: none;
       border: 1px solid rgba(56,189,248,0.2);
       backdrop-filter: blur(4px);
       transition: 0.3s;
-      box-shadow: 0 8px 20px -10px #0b1120;
     }
 
-    .contact-card i { font-size: 2rem; color: #38bdf8; transition: 0.2s; }
+    .contact-card i { font-size: 1.9rem; color: #38bdf8; }
     .contact-card:hover {
       background: #1e293b;
       border-color: #38bdf8;
-      transform: scale(1.05) translateY(-4px);
-      box-shadow: 0 20px 30px -8px #0f172a;
+      transform: translateY(-4px) scale(1.03);
     }
-    .contact-card:hover i { color: #a78bfa; transform: rotate(5deg) scale(1.1); }
 
-    /* ===== PROFESSIONAL JOURNEY TOGGLE ===== */
+    /* JOURNEY TOGGLE */
     .journey-toggle {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
       margin-bottom: 3rem;
+      flex-wrap: wrap;
     }
 
     .toggle-btn {
-      background: rgba(20, 30, 45, 0.6);
+      background: rgba(20, 30, 45, 0.7);
       backdrop-filter: blur(8px);
       border: 2px solid rgba(56,189,248,0.3);
       color: #b0d4f0;
-      padding: 1rem 3rem;
+      padding: 0.9rem 2.5rem;
       border-radius: 60px;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 10px 20px -8px black;
       display: flex;
       align-items: center;
       gap: 12px;
+      box-shadow: 0 10px 20px -8px black;
     }
 
-    .toggle-btn i { color: #38bdf8; font-size: 1.8rem; transition: 0.2s; }
+    .toggle-btn i { color: #38bdf8; font-size: 1.6rem; }
 
     .toggle-btn.active {
       background: linear-gradient(145deg, #38bdf8, #2563eb);
@@ -347,18 +341,13 @@
       border-color: #a78bfa;
     }
 
-    /* journey panels - FIXED DISPLAY PROPERTIES */
-    .journey-panel {
-      display: none;
-    }
+    /* journey panels - display controlled by JS */
+    .journey-panel { display: none; }
+    .journey-panel.active-panel { display: block !important; }
 
-    .journey-panel.active-panel {
-      display: block !important;
-    }
-
-    /* timeline styling */
+    /* modern timeline */
     .timeline-modern {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       position: relative;
     }
@@ -379,7 +368,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 3rem 0;
+      margin: 3.5rem 0;
       position: relative;
     }
 
@@ -403,11 +392,10 @@
     .timeline-item:hover .timeline-dot {
       background: #a78bfa;
       transform: translateX(-50%) scale(1.25);
-      box-shadow: 0 0 0 5px rgba(167,139,250,0.4), 0 0 35px #a78bfa;
     }
 
     .timeline-content {
-      background: rgba(20, 30, 45, 0.3);
+      background: rgba(20, 30, 45, 0.35);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(56,189,248,0.2);
       border-radius: 28px;
@@ -423,9 +411,10 @@
     }
 
     .timeline-content h4 {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       color: #f0f9ff;
       margin-bottom: 0.3rem;
+      line-height: 1.3;
     }
 
     .timeline-content .sub {
@@ -441,6 +430,7 @@
       color: #b0c4de;
       font-size: 0.95rem;
       margin-bottom: 1rem;
+      flex-wrap: wrap;
     }
 
     .timeline-content .meta i { color: #38bdf8; width: 1.5rem; }
@@ -452,28 +442,46 @@
       text-align: left;
     }
 
-    .timeline-content li { margin-bottom: 0.4rem; }
-    .timeline-content li i { color: #38bdf8; width: 2rem; }
+    .timeline-content li { margin-bottom: 0.6rem; display: flex; gap: 10px; }
+    .timeline-content li i { color: #38bdf8; width: 1.8rem; margin-top: 3px; }
 
-    /* responsive */
-    @media (max-width: 800px) {
-      .timeline-modern::before { left: 20px; }
-      .timeline-item { flex-direction: column; align-items: flex-start; margin-left: 30px; }
-      .timeline-item.left .timeline-content,
-      .timeline-item.right .timeline-content { width: 100%; text-align: left; margin: 0; }
-      .timeline-dot { left: 10px; transform: translateX(0); }
-      .timeline-item:hover .timeline-dot { transform: scale(1.25); }
+    /* ===== RESPONSIVE FIXES (MOBILE) ===== */
+    @media (max-width: 900px) {
+      nav { justify-content: center; flex-direction: column; gap: 0.3rem; padding: 0.8rem 4%; }
+      nav ul { gap: 1.2rem; justify-content: center; }
+      nav a { font-size: 1rem; }
+      h2 { font-size: 2.3rem; }
+      .hero h1 { font-size: 3.2rem; }
+      .typing { font-size: 1.5rem; min-height: 4.5rem; }
+      .btn { font-size: 1.2rem; padding: 0.9rem 2rem; }
+      section { padding: 80px 5%; }
+      .project-category-title { font-size: 1.8rem; }
     }
 
     @media (max-width: 700px) {
-      nav { flex-direction: column; gap: 0.5rem; padding: 1rem 5%; }
-      nav ul { gap: 1.5rem; }
-      .hero h1 { font-size: 3rem; }
-      .typing { font-size: 1.5rem; }
-      h2 { font-size: 2.2rem; }
-      section { padding: 80px 5%; }
-      .contact-card { padding: 1rem 1.8rem; font-size: 1.2rem; }
+      .timeline-modern::before { left: 25px; }
+      .timeline-item { flex-direction: column; align-items: flex-start; margin-left: 30px; margin-right: 0; }
+      .timeline-item.left .timeline-content,
+      .timeline-item.right .timeline-content { width: 100%; text-align: left; margin: 0; }
+      .timeline-dot { left: 14px; transform: translateX(0); }
+      .timeline-item:hover .timeline-dot { transform: scale(1.25); }
+      .timeline-content { padding: 1.5rem; }
+      .timeline-content h4 { font-size: 1.5rem; }
     }
+
+    @media (max-width: 500px) {
+      nav ul { gap: 0.8rem; }
+      nav a { font-size: 0.9rem; white-space: nowrap; }
+      .hero h1 { font-size: 2.5rem; }
+      .profile { width: 150px; height: 150px; }
+      .typing { font-size: 1.2rem; }
+      .btn { font-size: 1rem; padding: 0.8rem 1.5rem; }
+      .toggle-btn { font-size: 1.1rem; padding: 0.7rem 1.5rem; }
+      .contact-card { font-size: 1.1rem; padding: 0.8rem 1.5rem; }
+    }
+
+    /* fallback img */
+    .profile::after { content: ''; }
   </style>
 </head>
 <body>
@@ -492,13 +500,15 @@
     </ul>
   </nav>
 
+  <!-- HERO -->
   <section class="hero" id="about">
-    <img src="profile.png" alt="Mohamed Aslam" class="profile" onerror="this.src='https://via.placeholder.com/190x190?text=Aslam'">
+    <img src="profile.png" alt="Mohamed Aslam" class="profile" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22190%22%20height%3D%22190%22%20viewBox%3D%220%200%20190%20190%22%3E%3Crect%20width%3D%22190%22%20height%3D%22190%22%20fill%3D%22%2338bdf8%22%2F%3E%3Ctext%20x%3D%2235%22%20y%3D%22115%22%20font-size%3D%2240%22%20fill%3D%22white%22%20font-family%3D%22Poppins%22%3EAslam%3C%2Ftext%3E%3C%2Fsvg%3E';">
     <h1>Mohamed Aslam</h1>
     <div class="typing"></div>
-    <a class="btn" href="Mohamed_Aslam_Full_Stack_Developer.pdf" download><i class="fa fa-download"></i> Download Resume</a>
+    <a class="btn" href="#" download><i class="fa fa-download"></i> Download Resume</a>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
@@ -513,87 +523,81 @@
     </div>
   </section>
 
-  <!-- PROFESSIONAL JOURNEY SECTION: TOGGLE + DIM/ACTIVE -->
+  <!-- JOURNEY with toggle -->
   <section id="journey">
     <h2>My Journey</h2>
-    
-    <!-- Toggle Buttons - Experience Active by Default -->
     <div class="journey-toggle">
       <div class="toggle-btn" id="toggle-education"><i class="fa fa-graduation-cap"></i> Education</div>
       <div class="toggle-btn active" id="toggle-experience"><i class="fa fa-briefcase"></i> Experience</div>
     </div>
 
-    <!-- Education Panel (hidden initially) - FULLY POPULATED -->
+    <!-- Education panel -->
     <div class="journey-panel" id="panel-education">
       <div class="timeline-modern">
-        <!-- College -->
         <div class="timeline-item left">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h4>🎓 B.E. Computer Science Engineering</h4>
             <div class="sub">Anna University, Chennai</div>
             <div class="meta"><i class="fa fa-calendar"></i> 2019 – 2023 · First Class with Distinction</div>
-            <p><strong>CGPA: 8.7/10</strong> · Data Structures, Java Programming, Operating Systems, DBMS, Cloud Computing, Computer Networks, Software Engineering</p>
+            <p><strong>CGPA: 8.7/10</strong> · Data Structures, Java, DBMS, Cloud, Networks</p>
           </div>
         </div>
-        <!-- School -->
         <div class="timeline-item right">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h4>🏫 Higher Secondary (HSC)</h4>
-            <div class="sub">Tan Academy Matriculation Higher Secondary School</div>
+            <div class="sub">Tan Academy Matriculation School</div>
             <div class="meta"><i class="fa fa-calendar"></i> 2018 – 2019 · 88%</div>
-            <p>Computer Science, Mathematics, Physics, Chemistry - Completed with distinction</p>
+            <p>Computer Science, Mathematics, Physics, Chemistry</p>
           </div>
         </div>
-        <!-- Certifications -->
         <div class="timeline-item left">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h4>📜 Professional Certifications</h4>
             <ul>
-              <li><i class="fab fa-python"></i> <strong>Python Certification</strong> – GUVI (IIT Madras)</li>
-              <li><i class="fa fa-robot"></i> <strong>Natural Disasters Intensity Analysis using AI</strong> – IBM</li>
-              <li><i class="fa fa-cloud"></i> <strong>Introduction to Cloud</strong> – IBM</li>
-              <li><i class="fa fa-code"></i> <strong>Front-End Development</strong> – GUVI</li>
-              <li><i class="fa fa-network-wired"></i> <strong>CCNA</strong> – Cisco</li>
+              <li><i class="fab fa-python"></i> Python Certification – GUVI (IIT Madras)</li>
+              <li><i class="fa fa-robot"></i> Natural Disasters Intensity Analysis (AI) – IBM</li>
+              <li><i class="fa fa-cloud"></i> Introduction to Cloud – IBM</li>
+              <li><i class="fa fa-code"></i> Front-End Development – GUVI</li>
+              <li><i class="fa fa-network-wired"></i> CCNA – Cisco</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Experience Panel (active by default) - FULLY POPULATED with recent on top -->
+    <!-- Experience panel (active by default) -->
     <div class="journey-panel active-panel" id="panel-experience">
       <div class="timeline-modern">
-        <!-- Java Backend Developer (most recent, on top) -->
+        <!-- most recent -->
         <div class="timeline-item left">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h4>🚀 Java Backend Developer</h4>
-            <div class="sub">Annaa Silicon Technology · Chennai, India</div>
+            <div class="sub">Annaa Silicon Technology, Chennai</div>
             <div class="meta"><i class="fa fa-calendar"></i> Jan 2023 – Dec 2025 · Full-time</div>
             <ul>
-              <li><i class="fa fa-code"></i> Developed 20+ REST APIs using Java 17, Spring Boot, Spring Security (JWT, OAuth2) for ERP system</li>
-              <li><i class="fa fa-cubes"></i> Delivered 8+ core ERP modules including authentication, billing, inventory, accounting, and reporting</li>
-              <li><i class="fa fa-chart-line"></i> Improved live production performance by 30% through MySQL query tuning, indexing, and log analysis</li>
-              <li><i class="fa fa-cloud"></i> Migrated legacy monolithic application to microservices architecture using Spring Cloud API Gateway</li>
-              <li><i class="fab fa-angular"></i> Developed Angular frontend components, connected to Spring Boot microservices via REST APIs</li>
-              <li><i class="fa fa-bug"></i> Resolved 50+ production issues, improving stability, uptime, and release reliability</li>
+              <li><i class="fa fa-code"></i> Developed 20+ REST APIs using Java 17, Spring Boot, Spring Security (JWT, OAuth2) for ERP</li>
+              <li><i class="fa fa-cubes"></i> Delivered 8+ core modules: auth, billing, inventory, accounting, reporting</li>
+              <li><i class="fa fa-chart-line"></i> Improved production performance by 30% via MySQL tuning & indexing</li>
+              <li><i class="fa fa-cloud"></i> Migrated monolith to microservices with Spring Cloud Gateway</li>
+              <li><i class="fab fa-angular"></i> Built Angular frontend components connected to microservices</li>
+              <li><i class="fa fa-bug"></i> Resolved 50+ production issues, improved stability & uptime</li>
             </ul>
           </div>
         </div>
-        <!-- Full Stack Intern (Art of Living) -->
         <div class="timeline-item right">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h4>💻 Full Stack Developer Intern (Part-Time)</h4>
-            <div class="sub">Art of Living · TamilNadu, India</div>
+            <div class="sub">Art of Living, TamilNadu</div>
             <div class="meta"><i class="fa fa-calendar"></i> Feb 2023 – Jul 2023 · Part-time</div>
             <ul>
-              <li><i class="fa fa-code"></i> Built full-stack modules using Java, JDBC, MySQL, HTML, CSS, Bootstrap, and JavaScript</li>
-              <li><i class="fa fa-mobile-alt"></i> Designed responsive UI components and integrated backend services</li>
-              <li><i class="fa fa-users"></i> Collaborated with team to deliver features within sprint deadlines</li>
+              <li><i class="fa fa-code"></i> Built full-stack modules with Java, JDBC, MySQL, HTML, CSS, Bootstrap, JS</li>
+              <li><i class="fa fa-mobile-alt"></i> Designed responsive UI and integrated backend services</li>
+              <li><i class="fa fa-users"></i> Collaborated within sprint teams to deliver features</li>
             </ul>
           </div>
         </div>
@@ -605,9 +609,9 @@
   <section id="key-projects">
     <h2 class="project-category-title">⭐ Key Projects</h2>
     <div class="projects">
-      <div class="project"><i class="fa fa-cash-register"></i><h3>Retail ERP</h3><p>POS billing, inventory and finance system with comprehensive reporting and analytics dashboard.</p></div>
-      <div class="project"><i class="fa fa-cart-shopping"></i><h3>E-Commerce Platform</h3><p>PluralPay gateway with secure authentication, product catalog, and microservices architecture.</p></div>
-      <div class="project"><i class="fa fa-fingerprint"></i><h3>Biometric Booking</h3><p>Secugen Hamster Pro fingerprint integration for secure access control and attendance system.</p></div>
+      <div class="project"><i class="fa fa-cash-register"></i><h3>Retail ERP</h3><p>POS billing, inventory, finance, analytics dashboard, and reporting.</p></div>
+      <div class="project"><i class="fa fa-cart-shopping"></i><h3>E-Commerce Platform</h3><p>PluralPay gateway, secure auth, product catalog, microservices.</p></div>
+      <div class="project"><i class="fa fa-fingerprint"></i><h3>Biometric Booking</h3><p>Secugen Hamster Pro fingerprint for access control & attendance.</p></div>
     </div>
   </section>
 
@@ -615,9 +619,9 @@
   <section id="additional-projects">
     <h2 class="project-category-title">📁 Additional Projects</h2>
     <div class="projects">
-      <div class="project"><i class="fa fa-gem"></i><h3>Jewellery Management</h3><p>Inventory, billing, and customer management for jewellery stores with GST support and reporting.</p></div>
-      <div class="project"><i class="fa fa-school"></i><h3>School Management</h3><p>Student records, attendance, fee management, examination modules, and parent portal.</p></div>
-      <div class="project"><i class="fa fa-hospital"></i><h3>Hospital Management</h3><p>OPD, IPD, pharmacy, lab integration, appointment scheduling, and electronic medical records.</p></div>
+      <div class="project"><i class="fa fa-gem"></i><h3>Jewellery Management</h3><p>Inventory, billing, GST support, and customer management.</p></div>
+      <div class="project"><i class="fa fa-school"></i><h3>School Management</h3><p>Student records, attendance, fees, exams, and parent portal.</p></div>
+      <div class="project"><i class="fa fa-hospital"></i><h3>Hospital Management</h3><p>OPD, IPD, pharmacy, lab, appointments, electronic records.</p></div>
     </div>
   </section>
 
@@ -636,118 +640,89 @@
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <script>
-    // 1) PARTICLES.JS
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 90, density: { enable: true, value_area: 800 } },
-        color: { value: '#38bdf8' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.25, random: true },
-        size: { value: 2.5, random: true },
-        line_linked: { enable: true, distance: 140, color: '#4b5563', opacity: 0.2, width: 1.2 },
-        move: { enable: true, speed: 2, direction: 'none', random: true, out_mode: 'out' }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } },
-        modes: { grab: { distance: 180 }, push: { particles_nb: 3 } }
-      },
-      retina_detect: true
-    });
-
-    // 2) TYPED.JS
-    var typed = new Typed('.typing', {
-      strings: [
-        'Building scalable backend systems',
-        'Spring Boot Microservices Developer',
-        'Distributed Systems Engineer',
-        'Java Full Stack Architect'
-      ],
-      typeSpeed: 60, 
-      backSpeed: 40, 
-      loop: true
-    });
-
-    // 3) SCROLL REVEAL
-    ScrollReveal({ distance: '50px', duration: 1000, easing: 'cubic-bezier(0.5, 0, 0, 1)', reset: false });
-    ScrollReveal().reveal('.profile', { origin: 'bottom', distance: '30px', delay: 200 });
-    ScrollReveal().reveal('.hero h1', { origin: 'left', delay: 300 });
-    ScrollReveal().reveal('.typing', { origin: 'right', delay: 400 });
-    ScrollReveal().reveal('.btn', { origin: 'top', delay: 500 });
-    ScrollReveal().reveal('.card', { interval: 150, origin: 'bottom', distance: '40px', delay: 200, scale: 0.9 });
-    ScrollReveal().reveal('.timeline-item', { interval: 250, origin: 'bottom', distance: '40px', delay: 150 });
-    ScrollReveal().reveal('.project', { interval: 150, origin: 'bottom', distance: '30px', delay: 150 });
-    ScrollReveal().reveal('.contact-card', { interval: 200, origin: 'top', distance: '30px', delay: 250 });
-
-    // 4) JOURNEY TOGGLE - FIXED WITH FORCE DISPLAY
-    const eduBtn = document.getElementById('toggle-education');
-    const expBtn = document.getElementById('toggle-experience');
-    const eduPanel = document.getElementById('panel-education');
-    const expPanel = document.getElementById('panel-experience');
-
-    function setActivePanel(panel) {
-      console.log('Switching to panel:', panel);
-      
-      // Remove active class from all buttons
-      eduBtn.classList.remove('active');
-      expBtn.classList.remove('active');
-      
-      // Hide all panels first
-      eduPanel.classList.remove('active-panel');
-      expPanel.classList.remove('active-panel');
-      
-      // Show selected panel and activate button
-      if (panel === 'education') {
-        eduBtn.classList.add('active');
-        eduPanel.classList.add('active-panel');
-        console.log('Education panel activated - content length:', eduPanel.innerHTML.length);
-      } else {
-        expBtn.classList.add('active');
-        expPanel.classList.add('active-panel');
-        console.log('Experience panel activated - content length:', expPanel.innerHTML.length);
-      }
-    }
-
-    // Add click event listeners with explicit panel names
-    eduBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      setActivePanel('education');
-    });
-
-    expBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      setActivePanel('experience');
-    });
-
-    // 5) smooth scroll
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId.startsWith('#')) {
-          e.preventDefault();
-          const targetEl = document.querySelector(targetId);
-          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+    (function() {
+      // 1) particles
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 70, density: { enable: true, value_area: 800 } },
+          color: { value: '#38bdf8' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.2, random: true },
+          size: { value: 2.5, random: true },
+          line_linked: { enable: true, distance: 150, color: '#4b5563', opacity: 0.2, width: 1 },
+          move: { enable: true, speed: 1.8, direction: 'none', random: true }
+        },
+        interactivity: {
+          events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } },
+          modes: { grab: { distance: 180 }, push: { particles_nb: 2 } }
+        },
+        retina_detect: true
       });
-    });
 
-    // profile fallback and verification
-    document.addEventListener('DOMContentLoaded', () => {
-      const profileImg = document.querySelector('.profile');
-      if (profileImg) {
-        profileImg.onerror = function() { 
-          this.onerror = null; 
-          this.src = 'https://via.placeholder.com/190x190?text=Aslam'; 
-        };
+      // 2) typed.js
+      new Typed('.typing', {
+        strings: [
+          'Building scalable backend systems',
+          'Spring Boot Microservices Developer',
+          'Distributed Systems Engineer',
+          'Java Full Stack Architect'
+        ],
+        typeSpeed: 55, backSpeed: 35, loop: true
+      });
+
+      // 3) scroll reveal
+      ScrollReveal({ distance: '40px', duration: 900, easing: 'cubic-bezier(0.5, 0, 0, 1)', reset: false });
+      ScrollReveal().reveal('.profile', { origin: 'bottom', distance: '30px', delay: 200 });
+      ScrollReveal().reveal('.hero h1', { origin: 'left', delay: 300 });
+      ScrollReveal().reveal('.typing', { origin: 'right', delay: 400 });
+      ScrollReveal().reveal('.btn', { origin: 'top', delay: 500 });
+      ScrollReveal().reveal('.card', { interval: 120, origin: 'bottom', distance: '40px', delay: 200 });
+      ScrollReveal().reveal('.timeline-item', { interval: 200, origin: 'bottom', distance: '40px', delay: 150 });
+      ScrollReveal().reveal('.project', { interval: 130, origin: 'bottom', distance: '30px', delay: 150 });
+      ScrollReveal().reveal('.contact-card', { interval: 150, origin: 'top', distance: '30px', delay: 200 });
+
+      // 4) journey toggle (robust)
+      const eduBtn = document.getElementById('toggle-education');
+      const expBtn = document.getElementById('toggle-experience');
+      const eduPanel = document.getElementById('panel-education');
+      const expPanel = document.getElementById('panel-experience');
+
+      function setActivePanel(panelName) {
+        // remove active class from both btns & panels
+        eduBtn.classList.remove('active');
+        expBtn.classList.remove('active');
+        eduPanel.classList.remove('active-panel');
+        expPanel.classList.remove('active-panel');
+
+        if (panelName === 'education') {
+          eduBtn.classList.add('active');
+          eduPanel.classList.add('active-panel');
+        } else {
+          expBtn.classList.add('active');
+          expPanel.classList.add('active-panel');
+        }
       }
-      
-      // Verify panels have content
-      console.log('Education panel content exists:', eduPanel.innerHTML.length > 100);
-      console.log('Experience panel content exists:', expPanel.innerHTML.length > 100);
-      
-      // Ensure experience is active by default
+
+      eduBtn.addEventListener('click', (e) => { e.preventDefault(); setActivePanel('education'); });
+      expBtn.addEventListener('click', (e) => { e.preventDefault(); setActivePanel('experience'); });
+
+      // ensure experience active on load
       setActivePanel('experience');
-    });
+
+      // 5) smooth scroll
+      document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const hash = this.getAttribute('href');
+          if (hash && hash.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(hash);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // fallback for broken profile image already inline
+    })();
   </script>
 </body>
 </html>
