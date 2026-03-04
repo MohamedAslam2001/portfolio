@@ -2,9 +2,9 @@ var typed = new Typed(".typing", {
 
 strings:[
 "Building scalable backend systems",
-"Java Microservices Developer",
-"Spring Boot & Angular Engineer",
-"Distributed Systems Enthusiast"
+"Spring Boot Microservices Developer",
+"Distributed Systems Engineer",
+"Backend Performance Optimizer"
 ],
 
 typeSpeed:60,
