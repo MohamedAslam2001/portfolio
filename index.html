@@ -62,43 +62,43 @@
       position: relative;
     }
 
-    /* ===== THEME TOGGLE BUTTON ===== */
-    .theme-toggle {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 1000;
+    /* ===== THEME TOGGLE BUTTON (NOW IN HEADER) ===== */
+    .theme-toggle-header {
+      position: absolute;
+      right: 20px;
+      top: 12px;
+      z-index: 200;
       background: var(--accent-blue);
-      width: 50px;
-      height: 50px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4);
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
       border: 2px solid white;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       -webkit-tap-highlight-color: transparent;
     }
 
-    .theme-toggle:hover {
+    .theme-toggle-header:hover {
       transform: scale(1.1) rotate(15deg);
-      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
     }
 
-    .theme-toggle:active {
+    .theme-toggle-header:active {
       transform: scale(0.95);
     }
 
-    .theme-toggle i {
+    .theme-toggle-header i {
       color: white;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       transition: transform 0.3s ease;
       pointer-events: none;
     }
 
-    .theme-toggle:hover i {
+    .theme-toggle-header:hover i {
       transform: rotate(360deg);
     }
 
@@ -1055,7 +1055,7 @@
         padding: 0.8rem 5%; 
       }
       nav ul { gap: 2rem; }
-      .skills { grid-template-columns: repeat(4, 1fr); }
+      .skills { grid-template-columns: repeat(5, 1fr); } /* Adjusted for 5 columns */
       .projects { grid-template-columns: repeat(2, 1fr); }
       
       .timeline-modern { 
@@ -1083,9 +1083,9 @@
 </head>
 <body data-theme="light">
 
-  <!-- THEME TOGGLE BUTTON -->
-  <div class="theme-toggle" id="theme-toggle">
-    <i class="fas fa-moon" id="theme-icon"></i>
+  <!-- THEME TOGGLE BUTTON (MOVED TO HEADER) -->
+  <div class="theme-toggle-header" id="theme-toggle-header">
+    <i class="fas fa-moon" id="theme-icon-header"></i>
   </div>
 
   <!-- ANIMATED BACKGROUND -->
@@ -1126,7 +1126,7 @@
    <a class="btn" href="https://raw.githubusercontent.com/MohamedAslam2001/portfolio/main/Mohamed_Aslam_Full_Stack_Developer.pdf" download="Mohamed_Aslam_Resume.pdf"><i class="fa fa-download"></i> Resume</a>
   </section>
 
-  <!-- SKILLS SECTION -->
+  <!-- SKILLS SECTION (UPDATED: PYTHON & C# ADDED) -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
@@ -1134,6 +1134,9 @@
       <div class="card"><i class="fa fa-server"></i> Spring Boot</div>
       <div class="card"><i class="fa fa-network-wired"></i> Microservices</div>
       <div class="card"><i class="fab fa-angular"></i> Angular</div>
+      <!-- Python and C# added exactly after Angular -->
+      <div class="card"><i class="fab fa-python"></i> Python</div>
+      <div class="card"><i class="fa fa-code"></i> C#</div>
       <div class="card"><i class="fa fa-database"></i> MySQL</div>
       <div class="card"><i class="fa fa-bolt"></i> Kafka</div>
       <div class="card"><i class="fab fa-docker"></i> Docker</div>
@@ -1321,9 +1324,9 @@
         loop: true
       });
 
-      // Theme Toggle - FIXED for mobile
-      const themeToggle = document.getElementById('theme-toggle');
-      const themeIcon = document.getElementById('theme-icon');
+      // Theme Toggle - NOW IN HEADER
+      const themeToggle = document.getElementById('theme-toggle-header');
+      const themeIcon = document.getElementById('theme-icon-header');
       const body = document.body;
 
       // Function to update theme and icon
@@ -1331,7 +1334,7 @@
         body.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         
-        // Update icon - FIX: Direct class assignment
+        // Update icon
         if (theme === 'dark') {
           themeIcon.className = 'fas fa-sun';
         } else {
@@ -1340,10 +1343,10 @@
       }
 
       // Check for saved theme preference
-      const savedTheme =  'light';
+      const savedTheme = localStorage.getItem('theme') || 'light';
       setTheme(savedTheme);
 
-      // Toggle theme on click - FIX: Ensure event works on mobile
+      // Toggle theme on click
       themeToggle.addEventListener('click', function(e) {
         e.preventDefault();
         const currentTheme = body.getAttribute('data-theme');
